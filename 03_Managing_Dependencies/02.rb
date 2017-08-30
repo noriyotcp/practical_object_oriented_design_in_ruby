@@ -19,7 +19,6 @@ class Gear
   def gear_inches
     ratio * wheel.diameter
   end
-
 end
 
 class Wheel
@@ -40,11 +39,7 @@ class Wheel
   end
 end
 
-puts Gear.new(
-  chainring: 52,
-  cog: 11,
-  wheel: Wheel.new(26, 1.5)).gear_inches
-
-# If :chainring or :cog is not in hash, the default value will be set via merge method
-puts Gear.new(
-  wheel: Wheel.new(26, 1.5)).gear_inches
+puts Gear.new(wheel: Wheel.new(26, 1.5)).gear_inches
+puts Gear.new(chainring: 52,
+              cog: 11,
+              wheel: Wheel.new(26, 1.5)).gear_inches
